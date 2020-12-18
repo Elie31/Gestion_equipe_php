@@ -1,20 +1,14 @@
 <?php
 
-$username="shovon" || "luc";
-$pwd = "123" || "yw27fkbv";
-$dbname = "gestion_equipe" || "GestionEquipe";
-$host = "localhost"
-
-    try{
-        
-    }catch(){
-    
-    }
+$username="shovon";
+$pwd = "123";
+$dbname = "gestion_equipe";
+$host = "localhost";
 
     try{
         $link = new PDO("mysql:host=$host;dbname=$dbname",$username,$pwd);
-    }catch(Exception $err) {
-        die('Erreur connection'.$err->getMessage());
+    }catch(Exception $e) {
+        die('Erreur connection'.$e->getMessage());
     }
 
 ?>
