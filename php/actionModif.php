@@ -14,6 +14,14 @@
 	$numLicenceOrigine = $_POST['numLicenceOrigine'];
 
 
+
+	if($date_naissance > date('Y-m-j')){
+		echo"Date trop grande";
+	}
+
+
+
+
 	$req = $link->prepare("UPDATE Joueur SET numLicence = :numLicence, nom = :nom, prenom = :prenom, dateNaissance = :dateNaissance, taille = :taille, poids = :poids, photo = :photo, postePref = :postePref, etat = :etat WHERE numLicence = :numLicenceOrigine");
 
 	if (!$req) {

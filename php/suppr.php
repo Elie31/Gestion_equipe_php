@@ -7,11 +7,13 @@
 	$req = $link->prepare("DELETE FROM Joueur WHERE numLicence=:num");
 
 	if (!$req) {
-		echo "\nnpdo::errorInfo(): prepare \n";
+		echo "\nnpdo::errorInfo(): preparjne \n";
 		print_r($linkpdo->errorInfo());
 	}
 
 	$req->execute(array('num'=>$numLicence));
+
+	
 
 	header('Location: ../view/accueil.php');
 ?>

@@ -14,7 +14,7 @@
 
 		while ($data = $res->fetch()) { 
 
-				echo $data[0].'<br/>'.$data[1].'<br/>'.$data[2].'<br/>'.$data[3].'<br/>'.$data[4].'<br/>'.$data[5].'<br/>'.$data[7].'<br/>'.$data[8].'<br/>'.$data[6];
+				echo $data[0].' | '.$data[1].' | '.$data[2].' | '.$data[3].' | '.$data[4].' | '.$data[5].' | '.$data[7].' | '.$data[8].' | '.$data[6];
 				?>
 				<form action="../view/modif.php" method="post">
 

@@ -1,8 +1,8 @@
 <?php
 
-$username="luc";
-$pwd = "yw27fkbv";
-$dbname = "GestionEquipe";
+$username="shovon";//"luc";
+$pwd = "123"; //"yw27fkbv";
+$dbname = "gestion_equipe"; //"GestionEquipe";
 $host = "localhost";
 
     try{

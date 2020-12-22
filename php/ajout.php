@@ -1,5 +1,4 @@
 <?php
-
         require_once '../php/connect.php';
 
         if(isset($_POST['num_licence']) && (!empty($_POST['num_licence'])) && 
@@ -21,23 +20,21 @@
             $post_pref = $_POST['post_pref'];
             $etat = $_POST['etat'];
             $photo = $_POST['photo'];
+            
 
-
-            $verifJoueur = $link->prepare('SELECT COUNT(*) FROM Joueur WHERE numLicence = ?');
-            $verifJoueur->execute(array($num_license));
-            $verifJoueur->fetchColumn();
-
-            var_dump($verifJoueur->fetchColumn());
-
-            if($verifJoueur->fetchColumn() > 0){
-
-                echo 'Le joueur exite déjà, retour sur la page précédente ...';
-                sleep(100);
+            if($date_naissance > date('Y-m-j')){
                 header('Location: ../view/ajoutJoueur.php');
+                exit();
+            }
 
+            $verifJoueur = $link->prepare('SELECT * FROM Joueur WHERE numLicence LIKE ?');
+            $verifJoueur->execute(array($num_licence));
+            $joueur=$verifJoueur->fetch();
+
+            if($joueur){
+                header('Location: ../view/ajoutJoueur.php');   
             }else{
-                
-
+                var_dump("Insertion");
                 $req = $link->prepare('INSERT INTO Joueur(numLicence,nom,prenom,dateNaissance,taille,poids,photo,postePref,etat)
                 VALUES(?,?,?,?,?,?,?,?,?)');
                 $req->execute(array($num_licence,
@@ -49,19 +46,8 @@
                                     $photo,
                                     $post_pref,
                                     $etat));
-
-                header('Location: ../view/accueil.php');
+                
             }
-
         }
-
-           
-
-     
-        
-     
-      
-
-        
 
 ?>
