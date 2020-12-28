@@ -75,11 +75,11 @@
                     }
                 }
                 // le fichier existe déjà?
-                if (file_exists($target_file)) {
+                /*if (file_exists($target_file)) {
                     $message = "Erreur! le fichier image existe déjà.";
                     //echo $message;
                     $uploadOk = 0;
-                }
+                }*/
                 // le poid de l'image
                 if ($_FILES["fileselect"]["size"] > 500000) {
                     $message = "Le fichier selectionné est trop volumineux.";

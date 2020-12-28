@@ -14,8 +14,7 @@
 
 		while ($data = $res->fetch()) { 
 
-				echo $data[0].' | '.$data[1].' | '.$data[2].' | '.$data[3].' | '.$data[4].' | '.$data[5].' | '.$data[7].' | '.$data[8].' | '.$data[6];
-				?>
+				echo $data[0].' | '.$data[1].' | '.$data[2].' | '.$data[3].' | '.$data[4].' | '.$data[5].' | '.$data[7].' | '.$data[8].' | '?> <img src="../photo/<?php echo $data[6]?>" height="100" width="100"><?php ;?>
 				<form action="../view/modif.php" method="post">
 
 					<input type="hidden" name="numLicence" value="<?php echo $data[0]?> ">
