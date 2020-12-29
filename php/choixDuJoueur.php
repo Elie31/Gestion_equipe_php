@@ -8,7 +8,7 @@
         header('Location: ../view/feuilleMatch.php');
         exit();
     }else{
-     
+        /// ICI CA BUG AUSSI 
         foreach($_POST['joueur'] as $valeur){
 
             if($option == "1"){
@@ -19,7 +19,7 @@
                 echo "Joueur : <b>" . $valeur . "</b><br>" .$opt2."</b><br>";
             }
         
-			
+			///IL FAUT FAIRE UNE REQUETES QUI AJOUTE DANS PARTICIPER 
 			
 		}
     }

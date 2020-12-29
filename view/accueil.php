@@ -4,6 +4,7 @@
 	<title>ACCUEIL</title>
 </head>
 <body>
+<?php include "../view/parts/header.php"?>
 	
 		
 	<h1>BONJOUR TU ES SUR L'ACCUEIL</h1>

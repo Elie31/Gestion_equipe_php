@@ -9,7 +9,7 @@
 
 	<?php
 
-		echo $_POST['joueur'];
+		
 		foreach($_POST['joueur'] as $valeur){
         
 			echo "Joueur : <b>" . $valeur . "</b><br>";
