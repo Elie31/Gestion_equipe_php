@@ -3,27 +3,27 @@
         //print_r($_POST);
 
 
-        if(isset($_POST['num_licence']) && (!empty($_POST['num_licence'])) && 
+        if(isset($_POST['numLicence']) && (!empty($_POST['numLicence'])) && 
         (isset($_POST['nom'])) && (!empty($_POST['nom'])) &&
         (isset($_POST['prenom'])) && (!empty($_POST['prenom'])) &&
-        (isset($_POST['date_naissance'])) && (!empty($_POST['date_naissance'])) &&
+        (isset($_POST['dateNaissance'])) && (!empty($_POST['dateNaissance'])) &&
         (isset($_POST['taille'])) && (!empty($_POST['taille'])) &&
         (isset($_POST['poids'])) && (!empty($_POST['poids'])) &&
-        (isset($_POST['post_pref'])) && (!empty($_POST['post_pref'])) &&
+        (isset($_POST['postPref'])) && (!empty($_POST['postPref'])) &&
         (isset($_POST['etat'])) && (!empty($_POST['etat']))/* &&
         (isset($_POST['fileselect'])) && (!empty($_POST['fileselect']))*/){
 
+            //print_r($_POST);
 
 
 
-
-            $num_licence = $_POST['num_licence'];
+            $num_licence = $_POST['numLicence'];
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
-            $date_naissance = $_POST['date_naissance'];
+            $date_naissance = $_POST['dateNaissance'];
             $taille = $_POST['taille'];
             $poids = $_POST['poids'];
-            $post_pref = $_POST['post_pref'];
+            $post_pref = $_POST['postPref'];
             $etat = $_POST['etat'];
             $photo = basename($_FILES["fileselect"]["name"]);
             
