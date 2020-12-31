@@ -1,3 +1,11 @@
+<?php 
+
+session_start(); 
+
+if($_SESSION['user'] == 'admin'){
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +17,7 @@
 
 	<?php
 
-		
+		/// ICI CA BUG
 		foreach($_POST['joueur'] as $valeur){
         
 			echo "Joueur : <b>" . $valeur . "</b><br>";
@@ -22,3 +30,11 @@
 
 </body>
 </html>
+
+<?php 
+
+}else{
+	header('Location: ../view/login.php');
+}
+
+?>

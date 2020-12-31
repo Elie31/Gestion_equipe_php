@@ -1,3 +1,11 @@
+<?php 
+
+session_start(); 
+
+if($_SESSION['user'] == 'admin'){
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,3 +58,11 @@
 
 </body>
 </html>
+
+<?php 
+
+}else{
+	header('Location: ../view/login.php');
+}
+
+?>

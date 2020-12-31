@@ -1,10 +1,18 @@
+<?php 
+
+session_start(); 
+
+if($_SESSION['user'] == 'admin'){
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>ACCUEIL</title>
 </head>
 <body>
-<?php include "../view/parts/header.php"?>
+<?php include "../view/parts/header.php";?>
 	
 		
 	<h1>BONJOUR TU ES SUR L'ACCUEIL</h1>
@@ -44,9 +52,49 @@
 		} 
 
 		?>
+----------------------------------------------------------------------------------------------------------------------------------------</br>
+<?php 
+		require_once '../php/connect.php';
+		$req = $link->query('SELECT * FROM MatchVolley');
+
+		while ($dataM = $req->fetch()) { 
+
+				echo $dataM[1].' | '.$dataM[2].' | '.$dataM[3].' | '.$dataM[4].' | '.$dataM[5];?>
+				<form action="../view/modifMatch.php" method="post">
+
+					<input type="hidden" name="date_match" value="<?php echo $dataM[1]?> ">
+					<input type="hidden" name="lieu_match" value="<?php echo $dataM[2]?> ">
+					<input type="hidden" name="heure" value="<?php echo $dataM[3]?>" >
+					<input type="hidden" name="nom_tournoi" value="<?php echo $dataM[4]?>" >
+					<input type="hidden" name="nom_equipe" value="<?php echo $dataM[5]?>" >
+		
+					<input type="submit" name="actionM" value="modifier">
+		
+				</form>
+				<form action="../php/supprMatch.php" method="post">
+			
+					<input type="hidden" name="id" value="<?php echo $dataM[0]?> ">
+		
+					<input type="submit" name="actionM" value="supprimer">
+		
+				</form>
+
+
+				<?php
+		} 
+
+		?>
 
 
 	
 
 </body>
 </html>
+
+<?php 
+
+}else{
+	header('Location: ../view/login.php');
+}
+
+?>

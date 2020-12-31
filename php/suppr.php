@@ -2,6 +2,7 @@
 	
 	require_once '../php/connect.php';
 
+	print_r($_POST);
 	$numLicence = $_POST['numLicence'];
 
 	$req = $link->prepare("DELETE FROM Joueur WHERE numLicence=:num");
